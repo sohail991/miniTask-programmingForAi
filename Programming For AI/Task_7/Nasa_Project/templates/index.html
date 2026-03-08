@@ -1,0 +1,26 @@
+%%writefile templates/index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jahanzaib's NASA Explorer</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0b0d17; color: white; text-align: center; padding: 50px; }
+        .container { max-width: 800px; margin: auto; background: #1a1d29; padding: 20px; border-radius: 15px; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
+        img { max-width: 100%; border-radius: 10px; margin-top: 20px; }
+        h1 { color: #4cc9f0; }
+        p { line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>NASA Astronomy Picture of the Day</h1>
+        <h2>{{ data.title }}</h2>
+        <p><strong>Date:</strong> {{ data.date }}</p>
+        <img src="{{ data.url }}" alt="NASA APOD">
+        <p>{{ data.explanation }}</p>
+        <hr>
+        <footer style="font-size: 0.8em; color: gray;">Project by Jahanzaib</footer>
+    </div>
+</body>
+</html>
