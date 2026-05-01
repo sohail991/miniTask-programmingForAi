@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <div class="glass-card">
+
+        <h2>🎯 Career Suggestions</h2>
+
+        {% for item in results %}
+            <div class="card-box">
+                <h1 class="career">{{ item.career }}</h1>
+
+                <h3>📍 Roadmap</h3>
+                <ul>
+                    {% for step in item.roadmap %}
+                        <li>{{ step }}</li>
+                    {% endfor %}
+                </ul>
+
+                <h3>📚 Resources</h3>
+                <ul>
+                    {% for link in item.resources %}
+                        <li>
+                            <a href="{{ link }}" target="_blank">
+                                {{ link }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+
+                <hr>
+            </div>
+        {% endfor %}
+
+        <a href="/" class="back-btn">⬅ Try Again</a>
+
+    </div>
+</div>
+
+</body>
+</html>
